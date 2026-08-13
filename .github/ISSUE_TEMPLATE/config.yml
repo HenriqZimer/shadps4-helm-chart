@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or Discussion
+    url: https://github.com/HenriqZimer/shadps4-helm-chart/discussions
+    about: For questions, use GitHub Discussions
+  - name: shadPS4 Docker Image Issues
+    url: https://github.com/linuxserver/docker-shadps4/issues
+    about: For issues with the linuxserver.io shadPS4 image itself (not the Helm chart), use the official image repository
