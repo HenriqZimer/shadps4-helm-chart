@@ -1,0 +1,89 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: Chart releases are now signed (helm package --sign) - see artifacthub.io/signKey for the public key location and fingerprint, powers the "Signed" badge on ArtifactHub
+  artifacthub.io/changesHistory: |
+    - version: 1.0.2
+      changes:
+        - kind: added
+          description: values.schema.json - validates values.yaml against a JSON Schema, and is what powers the "Values schema" feature/badge on ArtifactHub (previously absent)
+    - version: 1.0.1
+      changes:
+        - kind: added
+          description: icon, previously missing entirely - pointed at linuxserver.io's own logo image for this app, which is why no image was ever showing on ArtifactHub
+    - version: 1.0.0
+      changes:
+        - kind: added
+          description: Initial release of the shadPS4 Helm chart
+        - kind: added
+          description: GPU passthrough for both Intel/AMD (VA-API via /dev/dri) and NVIDIA (via the NVIDIA Kubernetes device plugin, gpu.vendor=nvidia)
+        - kind: added
+          description: seccompUnconfined and a 2Gi default shmSize, both carried over from this chart's sibling pcsx2-helm-chart after PCSX2's JIT recompiler was found to crash with SIGBUS under Docker/Kubernetes' default seccomp/shm limits - not independently confirmed on shadPS4, but the same base image/toolchain makes it a likely fix if you hit the same crash
+        - kind: added
+          description: streaming.enabled/streaming.brokerPort in values.yaml, kept only so the chart's shape matches its siblings. WARNING - no RomM broker mod exists for shadPS4 at all (github.com/LoneAngelFayt/shadps4-romm-integration is an empty placeholder, not even a "dev" tag) - there is nothing to enable yet
+  artifacthub.io/license: MIT
+  artifacthub.io/links: |
+    - name: Helm Repository
+      url: https://henriqzimer.github.io/shadps4-helm-chart/
+    - name: Chart Source
+      url: https://github.com/HenriqZimer/shadps4-helm-chart
+    - name: Maintainer Website
+      url: https://henriqzimer.com.br
+    - name: GitHub Profile
+      url: https://github.com/HenriqZimer
+    - name: linuxserver.io shadPS4 Image
+      url: https://docs.linuxserver.io/images/docker-shadps4/
+    - name: Documentation
+      url: https://github.com/HenriqZimer/shadps4-helm-chart/blob/main/chart/README.md
+  artifacthub.io/signKey: |
+    fingerprint: C2E2E16693F2715BA0B23913BF94E5067859562F
+    url: https://henriqzimer.github.io/shadps4-helm-chart/HenriqZimer-helm-charts-public.asc
+apiVersion: v2
+appVersion: latest
+description: A Helm chart for shadPS4 - the linuxserver.io early/experimental PlayStation
+  4 emulator KasmVNC webtop image
+home: https://docs.linuxserver.io/images/docker-shadps4/
+icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/shadps4-logo.png
+keywords:
+- - shadps4
+- - emulator
+- - playstation4
+- - ps4
+- - retrogaming
+- - kasmvnc
+- - linuxserver
+maintainers:
+- - email: henrique.zimermann@outlook.com
+  name: HenriqZimer
+  url: https://henriqzimer.com.br
+name: shadps4
+sources:
+- - https://github.com/linuxserver/docker-shadps4
+- - https://github.com/HenriqZimer/shadps4-helm-chart
+type: application
+version: 1.0.3
+
+...
+files:
+  shadps4-1.0.3.tgz: sha256:e137c7a79b6a12fe4c154d3ca45e9ee9e55f8164fd73a2cc4674cc33158ea1eb
+
+-----BEGIN PGP SIGNATURE-----
+
+wsG5BAEBCgBtBYJqgvFOCRC/lOUGeFlWL0UUAAAAAAAcACBzYWx0QG5vdGF0aW9u
+cy5vcGVucGdwanMub3JnEkR8X5879gu+efuK4qMiTUxcttfi5v/Sq5p+4fKKFk4W
+IQTC4uFmk/JxW6CyORO/lOUGeFlWLwAAr7oP/jdPvafwcFBUnAv0vJ5lvx5vUM7C
+K/EizPPG+ySoAxrTUZQwknVyIPttB1lFO3tjUQn+3iSEz+umLqYaK+qF3hxVWKgF
+TWnA++gh3WaI7rlBLvWChC8GzyBveXQAon5Q8vRjk68msS3Pj22lotIH3G5DkzF9
+9keq2IUCf4SwGq6Ho/y+TanWo0lpIBX1DnZQWUd7JMhSiRqnO8kPj4hH2F7rORQN
+/l46YfPr4nDrOSkoykJZvLcALSi+UNSw245vvbC1rGKYjTEah/cwCF8OjTwYxGPO
+jP4U9w54JVLAJOMCY6kGfnE1M0t8az6F0z8p848jaCLPoNHoxD+xNCsRSx86FRFR
++hjB5emuye48JmuGn3YBM8u9wY41RAXHkAyrmRrUt1QRb7MSEiX93kKXLDuAcl2P
++HEYTijCnncDqPhG7/ky5ersYrTftWZZwHonBmih4EqdOfpJW2SWeXjZitMNnNQx
+7ZzoKOmzLqZyjnfFEXxqLyE1zWtnThkDT4GQQhqc6dMfL8NVkyO7j2hePyYFK8Zw
+R3WySxuZAutGVDOEdXdtKzBxpJbR7z+zNTS6bOXAiC3w5YI43IXOFD/WV+99gQi5
+XLWR4qZpzed5lfTp9JXETTdoRJoKF4h1IgHiR2FkgfLJLbTE8MWmJYrWjD0Sbxux
+jrRyNWmSWAawTASz
+-----END PGP SIGNATURE-----
