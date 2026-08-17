@@ -1,6 +1,6 @@
 # shadPS4 Helm Chart
 
-[![Version: 1.0.1](https://img.shields.io/badge/Version-1.0.1-informational?style=flat-square)](https://github.com/HenriqZimer/shadps4-helm-chart)
+[![Version: 1.0.2](https://img.shields.io/badge/Version-1.0.2-informational?style=flat-square)](https://github.com/HenriqZimer/shadps4-helm-chart)
 [![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)](https://docs.linuxserver.io/images/docker-shadps4/)
 
 A Helm chart for [shadPS4](https://docs.linuxserver.io/images/docker-shadps4/) - the linuxserver.io
@@ -46,7 +46,7 @@ git clone https://github.com/HenriqZimer/shadps4-helm-chart.git
 cd shadps4-helm-chart
 
 helm package chart/
-helm install shadps4 ./shadps4-1.0.1.tgz
+helm install shadps4 ./shadps4-1.0.2.tgz
 ```
 
 ## Configuration
