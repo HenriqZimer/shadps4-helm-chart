@@ -4,6 +4,63 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: added
+          description: icon, previously missing entirely - pointed at linuxserver.io's own logo image for this app, which is why no image was ever showing on ArtifactHub
+      artifacthub.io/changesHistory: |
+        - version: 1.0.0
+          changes:
+            - kind: added
+              description: Initial release of the shadPS4 Helm chart
+            - kind: added
+              description: GPU passthrough for both Intel/AMD (VA-API via /dev/dri) and NVIDIA (via the NVIDIA Kubernetes device plugin, gpu.vendor=nvidia)
+            - kind: added
+              description: seccompUnconfined and a 2Gi default shmSize, both carried over from this chart's sibling pcsx2-helm-chart after PCSX2's JIT recompiler was found to crash with SIGBUS under Docker/Kubernetes' default seccomp/shm limits - not independently confirmed on shadPS4, but the same base image/toolchain makes it a likely fix if you hit the same crash
+            - kind: added
+              description: streaming.enabled/streaming.brokerPort in values.yaml, kept only so the chart's shape matches its siblings. WARNING - no RomM broker mod exists for shadPS4 at all (github.com/LoneAngelFayt/shadps4-romm-integration is an empty placeholder, not even a "dev" tag) - there is nothing to enable yet
+      artifacthub.io/license: MIT
+      artifacthub.io/links: |
+        - name: Helm Repository
+          url: https://henriqzimer.github.io/shadps4-helm-chart/
+        - name: Chart Source
+          url: https://github.com/HenriqZimer/shadps4-helm-chart
+        - name: Maintainer Website
+          url: https://henriqzimer.com.br
+        - name: GitHub Profile
+          url: https://github.com/HenriqZimer
+        - name: linuxserver.io shadPS4 Image
+          url: https://docs.linuxserver.io/images/docker-shadps4/
+        - name: Documentation
+          url: https://github.com/HenriqZimer/shadps4-helm-chart/blob/main/chart/README.md
+    apiVersion: v2
+    appVersion: latest
+    created: "2026-08-17T01:48:45.933494159Z"
+    description: A Helm chart for shadPS4 - the linuxserver.io early/experimental
+      PlayStation 4 emulator KasmVNC webtop image
+    digest: 1c8a3da05b599532827430489289d6f2ee546392775f004368b0c27727d362a6
+    home: https://docs.linuxserver.io/images/docker-shadps4/
+    icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/shadps4-logo.png
+    keywords:
+    - shadps4
+    - emulator
+    - playstation4
+    - ps4
+    - retrogaming
+    - kasmvnc
+    - linuxserver
+    maintainers:
+    - email: henrique.zimermann@outlook.com
+      name: HenriqZimer
+      url: https://henriqzimer.com.br
+    name: shadps4
+    sources:
+    - https://github.com/linuxserver/docker-shadps4
+    - https://github.com/HenriqZimer/shadps4-helm-chart
+    type: application
+    urls:
+    - https://henriqzimer.github.io/shadps4-helm-chart/shadps4-1.0.1.tgz
+    version: 1.0.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
           description: Initial release of the shadPS4 Helm chart
         - kind: added
           description: GPU passthrough for both Intel/AMD (VA-API via /dev/dri) and NVIDIA (via the NVIDIA Kubernetes device plugin, gpu.vendor=nvidia)
@@ -27,7 +84,7 @@ entries:
           url: https://github.com/HenriqZimer/shadps4-helm-chart/blob/main/chart/README.md
     apiVersion: v2
     appVersion: latest
-    created: "2026-08-16T01:00:53.555743698Z"
+    created: "2026-08-17T01:48:45.932351355Z"
     description: A Helm chart for shadPS4 - the linuxserver.io early/experimental
       PlayStation 4 emulator KasmVNC webtop image
     digest: 1be3188ce48617c35fdd8246fb183b226fec655de083fbb3efff747c40944fb5
@@ -52,4 +109,4 @@ entries:
     urls:
     - https://henriqzimer.github.io/shadps4-helm-chart/shadps4-1.0.0.tgz
     version: 1.0.0
-generated: "2026-08-16T01:00:53.554067316Z"
+generated: "2026-08-17T01:48:45.930988111Z"
