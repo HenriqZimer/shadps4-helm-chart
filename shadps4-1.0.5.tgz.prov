@@ -1,0 +1,97 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: fixed
+      description: README install commands now use a unique repo alias (<name>-helm-chart) instead of the bare chart name, and pin --version explicitly, matching what actually works
+  artifacthub.io/changesHistory: |
+    - version: 1.0.4
+      changes:
+        - kind: changed
+          description: README now shows the emulator's logo at the top (linuxserver.io's own image, same one used for the chart icon)
+    - version: 1.0.3
+      changes:
+        - kind: added
+          description: Chart releases are now signed (helm package --sign) - see artifacthub.io/signKey for the public key location and fingerprint, powers the "Signed" badge on ArtifactHub
+    - version: 1.0.2
+      changes:
+        - kind: added
+          description: values.schema.json - validates values.yaml against a JSON Schema, and is what powers the "Values schema" feature/badge on ArtifactHub (previously absent)
+    - version: 1.0.1
+      changes:
+        - kind: added
+          description: icon, previously missing entirely - pointed at linuxserver.io's own logo image for this app, which is why no image was ever showing on ArtifactHub
+    - version: 1.0.0
+      changes:
+        - kind: added
+          description: Initial release of the shadPS4 Helm chart
+        - kind: added
+          description: GPU passthrough for both Intel/AMD (VA-API via /dev/dri) and NVIDIA (via the NVIDIA Kubernetes device plugin, gpu.vendor=nvidia)
+        - kind: added
+          description: seccompUnconfined and a 2Gi default shmSize, both carried over from this chart's sibling pcsx2-helm-chart after PCSX2's JIT recompiler was found to crash with SIGBUS under Docker/Kubernetes' default seccomp/shm limits - not independently confirmed on shadPS4, but the same base image/toolchain makes it a likely fix if you hit the same crash
+        - kind: added
+          description: streaming.enabled/streaming.brokerPort in values.yaml, kept only so the chart's shape matches its siblings. WARNING - no RomM broker mod exists for shadPS4 at all (github.com/LoneAngelFayt/shadps4-romm-integration is an empty placeholder, not even a "dev" tag) - there is nothing to enable yet
+  artifacthub.io/license: MIT
+  artifacthub.io/links: |
+    - name: Helm Repository
+      url: https://henriqzimer.github.io/shadps4-helm-chart/
+    - name: Chart Source
+      url: https://github.com/HenriqZimer/shadps4-helm-chart
+    - name: Maintainer Website
+      url: https://henriqzimer.com.br
+    - name: GitHub Profile
+      url: https://github.com/HenriqZimer
+    - name: linuxserver.io shadPS4 Image
+      url: https://docs.linuxserver.io/images/docker-shadps4/
+    - name: Documentation
+      url: https://github.com/HenriqZimer/shadps4-helm-chart/blob/main/chart/README.md
+  artifacthub.io/signKey: |
+    fingerprint: C2E2E16693F2715BA0B23913BF94E5067859562F
+    url: https://henriqzimer.github.io/shadps4-helm-chart/HenriqZimer-helm-charts-public.asc
+apiVersion: v2
+appVersion: latest
+description: A Helm chart for shadPS4 - the linuxserver.io early/experimental PlayStation
+  4 emulator KasmVNC webtop image
+home: https://docs.linuxserver.io/images/docker-shadps4/
+icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/shadps4-logo.png
+keywords:
+- - shadps4
+- - emulator
+- - playstation4
+- - ps4
+- - retrogaming
+- - kasmvnc
+- - linuxserver
+maintainers:
+- - email: henrique.zimermann@outlook.com
+  name: HenriqZimer
+  url: https://henriqzimer.com.br
+name: shadps4
+sources:
+- - https://github.com/linuxserver/docker-shadps4
+- - https://github.com/HenriqZimer/shadps4-helm-chart
+type: application
+version: 1.0.5
+
+...
+files:
+  shadps4-1.0.5.tgz: sha256:9b558b0d80acbab0a23dbcfb71ba92ae8247fe6f51c1ee10d5284e0a62095088
+
+-----BEGIN PGP SIGNATURE-----
+
+wsG5BAEBCgBtBYJqhoN3CRC/lOUGeFlWL0UUAAAAAAAcACBzYWx0QG5vdGF0aW9u
+cy5vcGVucGdwanMub3JncP3AVxmYz5vdEnu2B1jqsj1LHiKjwnqp4Cn8KX6sX6UW
+IQTC4uFmk/JxW6CyORO/lOUGeFlWLwAArmYP/iDP/zuRXIc1r+vXf8X1Ft26Vjlg
+mAZKq3FvbeE5r0l1eu1vlQbHeKaQjL2BXr/ZbRgzTrDpgRUxqGYFYFm6MkbDST2K
+ARIScl+ytHN1YsAQBbBq3RMeHW+tKXSC93G1NW/n6zq2gmwJ4aBN2bG8K1QLzK3R
+Hh8cj0eLCDNmyCVw28yFlRyvaf9Avpn/L8f95HE0lrtVbbepVSwzQHMTxSyDNhnq
+dM6YIGapp5U8FyxG8vpwIYrQPF25XaaB8dhUKG6YrE8HO8z7EEHatbyef3Vcf2U0
+FPBG4Bo7mizs1igJXZHwJlYZ5UXTxZYPD3SD1D0A1TM3O1Rvl74BlMqPewZTJaPm
+j7zmAEmloBejuhwXCdaZyJQ3XxAVNtxX3G11YzM9tIXRUn3r2hmW9SQAM/ESDnoW
+WgjWjlLC47gqpgFyDWL7C22SiQubP3NmqQSWefAn2KJ6bJ5reKdZEpw3NwAZtauR
+XNRa/hdez33IOWS0THAoCOEdXdaSvjV6OJNKx/RwX2UJ5rJAMXkTzDt6ijmymqbV
+53aChYeUWDk4ZJknoRphlu80cyQwCAD0R0bezyyRhnBKT96Mh3/8INfLPdZpEZ8f
+BMPp3jk3K+MPU8zOBFSf1LXKbF3pefwKFoAcXptrROYUuZRQvQSj6RvrZZ5vpEIr
+3GZa2Qj2ltTsXl64
+-----END PGP SIGNATURE-----

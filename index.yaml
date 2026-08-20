@@ -3,6 +3,82 @@ entries:
   shadps4:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: README install commands now use a unique repo alias (<name>-helm-chart) instead of the bare chart name, and pin --version explicitly, matching what actually works
+      artifacthub.io/changesHistory: |
+        - version: 1.0.4
+          changes:
+            - kind: changed
+              description: README now shows the emulator's logo at the top (linuxserver.io's own image, same one used for the chart icon)
+        - version: 1.0.3
+          changes:
+            - kind: added
+              description: Chart releases are now signed (helm package --sign) - see artifacthub.io/signKey for the public key location and fingerprint, powers the "Signed" badge on ArtifactHub
+        - version: 1.0.2
+          changes:
+            - kind: added
+              description: values.schema.json - validates values.yaml against a JSON Schema, and is what powers the "Values schema" feature/badge on ArtifactHub (previously absent)
+        - version: 1.0.1
+          changes:
+            - kind: added
+              description: icon, previously missing entirely - pointed at linuxserver.io's own logo image for this app, which is why no image was ever showing on ArtifactHub
+        - version: 1.0.0
+          changes:
+            - kind: added
+              description: Initial release of the shadPS4 Helm chart
+            - kind: added
+              description: GPU passthrough for both Intel/AMD (VA-API via /dev/dri) and NVIDIA (via the NVIDIA Kubernetes device plugin, gpu.vendor=nvidia)
+            - kind: added
+              description: seccompUnconfined and a 2Gi default shmSize, both carried over from this chart's sibling pcsx2-helm-chart after PCSX2's JIT recompiler was found to crash with SIGBUS under Docker/Kubernetes' default seccomp/shm limits - not independently confirmed on shadPS4, but the same base image/toolchain makes it a likely fix if you hit the same crash
+            - kind: added
+              description: streaming.enabled/streaming.brokerPort in values.yaml, kept only so the chart's shape matches its siblings. WARNING - no RomM broker mod exists for shadPS4 at all (github.com/LoneAngelFayt/shadps4-romm-integration is an empty placeholder, not even a "dev" tag) - there is nothing to enable yet
+      artifacthub.io/license: MIT
+      artifacthub.io/links: |
+        - name: Helm Repository
+          url: https://henriqzimer.github.io/shadps4-helm-chart/
+        - name: Chart Source
+          url: https://github.com/HenriqZimer/shadps4-helm-chart
+        - name: Maintainer Website
+          url: https://henriqzimer.com.br
+        - name: GitHub Profile
+          url: https://github.com/HenriqZimer
+        - name: linuxserver.io shadPS4 Image
+          url: https://docs.linuxserver.io/images/docker-shadps4/
+        - name: Documentation
+          url: https://github.com/HenriqZimer/shadps4-helm-chart/blob/main/chart/README.md
+      artifacthub.io/signKey: |
+        fingerprint: C2E2E16693F2715BA0B23913BF94E5067859562F
+        url: https://henriqzimer.github.io/shadps4-helm-chart/HenriqZimer-helm-charts-public.asc
+    apiVersion: v2
+    appVersion: latest
+    created: "2026-08-20T04:32:57.645603549Z"
+    description: A Helm chart for shadPS4 - the linuxserver.io early/experimental
+      PlayStation 4 emulator KasmVNC webtop image
+    digest: 9b558b0d80acbab0a23dbcfb71ba92ae8247fe6f51c1ee10d5284e0a62095088
+    home: https://docs.linuxserver.io/images/docker-shadps4/
+    icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/shadps4-logo.png
+    keywords:
+    - shadps4
+    - emulator
+    - playstation4
+    - ps4
+    - retrogaming
+    - kasmvnc
+    - linuxserver
+    maintainers:
+    - email: henrique.zimermann@outlook.com
+      name: HenriqZimer
+      url: https://henriqzimer.com.br
+    name: shadps4
+    sources:
+    - https://github.com/linuxserver/docker-shadps4
+    - https://github.com/HenriqZimer/shadps4-helm-chart
+    type: application
+    urls:
+    - https://henriqzimer.github.io/shadps4-helm-chart/shadps4-1.0.5.tgz
+    version: 1.0.5
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: README now shows the emulator's logo at the top (linuxserver.io's own image, same one used for the chart icon)
       artifacthub.io/changesHistory: |
@@ -47,7 +123,7 @@ entries:
         url: https://henriqzimer.github.io/shadps4-helm-chart/HenriqZimer-helm-charts-public.asc
     apiVersion: v2
     appVersion: latest
-    created: "2026-08-20T04:15:10.465130188Z"
+    created: "2026-08-20T04:32:57.644173784Z"
     description: A Helm chart for shadPS4 - the linuxserver.io early/experimental
       PlayStation 4 emulator KasmVNC webtop image
     digest: 579691ad253ace2df47ad0e5acaf143e12c54cb6ac9f826a96b69a50481e6af7
@@ -115,7 +191,7 @@ entries:
         url: https://henriqzimer.github.io/shadps4-helm-chart/HenriqZimer-helm-charts-public.asc
     apiVersion: v2
     appVersion: latest
-    created: "2026-08-20T04:15:10.463565163Z"
+    created: "2026-08-20T04:32:57.642686417Z"
     description: A Helm chart for shadPS4 - the linuxserver.io early/experimental
       PlayStation 4 emulator KasmVNC webtop image
     digest: e137c7a79b6a12fe4c154d3ca45e9ee9e55f8164fd73a2cc4674cc33158ea1eb
@@ -176,7 +252,7 @@ entries:
           url: https://github.com/HenriqZimer/shadps4-helm-chart/blob/main/chart/README.md
     apiVersion: v2
     appVersion: latest
-    created: "2026-08-20T04:15:10.462104629Z"
+    created: "2026-08-20T04:32:57.640884933Z"
     description: A Helm chart for shadPS4 - the linuxserver.io early/experimental
       PlayStation 4 emulator KasmVNC webtop image
     digest: 4fd906d690afe2a47b95be8ae576d7a7bad56c6e1338a528aba2b38fd24bf874
@@ -233,7 +309,7 @@ entries:
           url: https://github.com/HenriqZimer/shadps4-helm-chart/blob/main/chart/README.md
     apiVersion: v2
     appVersion: latest
-    created: "2026-08-20T04:15:10.460587476Z"
+    created: "2026-08-20T04:32:57.638668546Z"
     description: A Helm chart for shadPS4 - the linuxserver.io early/experimental
       PlayStation 4 emulator KasmVNC webtop image
     digest: 1c8a3da05b599532827430489289d6f2ee546392775f004368b0c27727d362a6
@@ -285,7 +361,7 @@ entries:
           url: https://github.com/HenriqZimer/shadps4-helm-chart/blob/main/chart/README.md
     apiVersion: v2
     appVersion: latest
-    created: "2026-08-20T04:15:10.459300774Z"
+    created: "2026-08-20T04:32:57.636910841Z"
     description: A Helm chart for shadPS4 - the linuxserver.io early/experimental
       PlayStation 4 emulator KasmVNC webtop image
     digest: 1be3188ce48617c35fdd8246fb183b226fec655de083fbb3efff747c40944fb5
@@ -310,4 +386,4 @@ entries:
     urls:
     - https://henriqzimer.github.io/shadps4-helm-chart/shadps4-1.0.0.tgz
     version: 1.0.0
-generated: "2026-08-20T04:15:10.457769148Z"
+generated: "2026-08-20T04:32:57.635425697Z"
