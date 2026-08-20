@@ -4,7 +4,7 @@
   <img src="https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/shadps4-logo.png" alt="shadPS4 logo" width="140" />
 </p>
 
-[![Version: 1.0.4](https://img.shields.io/badge/Version-1.0.4-informational?style=flat-square)](https://github.com/HenriqZimer/shadps4-helm-chart)
+[![Version: 1.0.5](https://img.shields.io/badge/Version-1.0.5-informational?style=flat-square)](https://github.com/HenriqZimer/shadps4-helm-chart)
 [![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)](https://docs.linuxserver.io/images/docker-shadps4/)
 
 A Helm chart for [shadPS4](https://docs.linuxserver.io/images/docker-shadps4/) - the linuxserver.io
@@ -14,11 +14,11 @@ early PlayStation 4 emulator, served as a full desktop over the browser via Kasm
 
 ```bash
 # Add the Helm repository
-helm repo add shadps4 https://henriqzimer.github.io/shadps4-helm-chart
+helm repo add shadps4-helm-chart https://henriqzimer.github.io/shadps4-helm-chart/
 helm repo update
 
 # Install shadPS4
-helm install shadps4 shadps4/shadps4
+helm install my-shadps4 shadps4-helm-chart/shadps4 --version 1.0.5
 ```
 
 ## Prerequisites
@@ -37,10 +37,10 @@ helm install shadps4 shadps4/shadps4
 ### From Helm Repository
 
 ```bash
-helm repo add shadps4 https://henriqzimer.github.io/shadps4-helm-chart
+helm repo add shadps4-helm-chart https://henriqzimer.github.io/shadps4-helm-chart/
 helm repo update
 
-helm install shadps4 shadps4/shadps4
+helm install my-shadps4 shadps4-helm-chart/shadps4 --version 1.0.5
 ```
 
 ### From Source
@@ -50,7 +50,7 @@ git clone https://github.com/HenriqZimer/shadps4-helm-chart.git
 cd shadps4-helm-chart
 
 helm package chart/
-helm install shadps4 ./shadps4-1.0.4.tgz
+helm install my-shadps4 ./shadps4-1.0.5.tgz
 ```
 
 ## Configuration

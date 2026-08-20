@@ -28,14 +28,14 @@ your network:
 ### Add Helm Repository
 
 ```bash
-helm repo add shadps4 https://henriqzimer.github.io/shadps4-helm-chart/
+helm repo add shadps4-helm-chart https://henriqzimer.github.io/shadps4-helm-chart/
 helm repo update
 ```
 
 ### Install Chart
 
 ```bash
-helm install shadps4 shadps4/shadps4
+helm install my-shadps4 shadps4-helm-chart/shadps4 --version 1.0.5
 ```
 
 For detailed installation instructions and configuration options, see the [chart README](chart/README.md).
