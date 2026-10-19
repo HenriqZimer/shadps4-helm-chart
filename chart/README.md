@@ -4,8 +4,8 @@
   <img src="https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/shadps4-logo.png" alt="shadPS4 logo" width="140" />
 </p>
 
-[![Version: 1.0.5](https://img.shields.io/badge/Version-1.0.5-informational?style=flat-square)](https://github.com/HenriqZimer/shadps4-helm-chart)
-[![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)](https://docs.linuxserver.io/images/docker-shadps4/)
+[![Version: 1.4.0](https://img.shields.io/badge/Version-1.4.0-informational?style=flat-square)](https://github.com/HenriqZimer/shadps4-helm-chart)
+[![AppVersion: shadPS4QtLauncher-2026-10-18-6f6b911f4865a1c8bf2425071ca8d39ec46d9ea9](https://img.shields.io/badge/AppVersion-shadPS4QtLauncher--2026--10--18--6f6b911f4865a1c8bf2425071ca8d39ec46d9ea9-informational?style=flat-square)](https://docs.linuxserver.io/images/docker-shadps4/)
 
 A Helm chart for [shadPS4](https://docs.linuxserver.io/images/docker-shadps4/) - the linuxserver.io
 early PlayStation 4 emulator, served as a full desktop over the browser via KasmVNC.
@@ -200,7 +200,7 @@ opening ROMs from wherever you mounted your library (see `extraVolumes` above).
 |---|---|---|
 | `replicaCount` | `1` | Number of replicas. Must stay at 1 — no session clustering. |
 | `image.repository` | `lscr.io/linuxserver/shadps4` | Container image. |
-| `image.tag` | `latest` | Image tag. |
+| `image.tag` | `shadPS4QtLauncher-2026-10-18-6f6b911f4865a1c8bf2425071ca8d39ec46d9ea9-ls49` | Image tag. |
 | `env.PUID` / `env.PGID` | `1000` / `1000` | User/group the app runs as; match your storage's ownership. |
 | `env.TZ` | `Etc/UTC` | Timezone. |
 | `env.KASMVNC_ENABLE_BASIC_AUTH` | `false` | Require basic auth on the web UI. |
